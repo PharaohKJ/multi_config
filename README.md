@@ -98,3 +98,5 @@ puts config.value(:simple1)['key1']
 puts config.value(:env)['key1']
 ```
 
+# TODO
+ gem化
