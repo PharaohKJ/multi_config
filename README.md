@@ -11,10 +11,25 @@
 などがあげられる。これらの値をそれぞれ管理(読み込み、参照)し、使う方としては
 その優先度を意識しなくてすむ設定classが欲しかった。
 
+## Installation
 
-# HOW TO USE
+Add this line to your application's Gemfile:
 
-## 1. `MultiConfig::EachConfig`を`include`したclassを作成する
+```ruby
+gem 'multi_config'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install multi_config
+
+## Usage
+
+### 1. `MultiConfig::EachConfig`を`include`したclassを作成する
 
 ```ruby
   # Hashを用いた設定のConfig例
@@ -45,7 +60,7 @@
   end
 ```
 
-## 2. MultiConfig.instance.addで名前を指定して追加する
+### 2. MultiConfig.instance.addで名前を指定して追加する
 
 最初に追加したほうが優先度が高い。
 
@@ -61,14 +76,14 @@ config = MultiConfig::MultiConfig.instance.add(
 ```
 
 
-## 3. アクセッサ[]でアクセスする
+### 3. アクセッサ[]でアクセスする
 
 ```ruby
 puts config['key1']
 ```
 
 
-## その他
+### その他
 
 ```ruby
 # env一覧を表示
@@ -98,5 +113,19 @@ puts config.value(:simple1)['key1']
 puts config.value(:env)['key1']
 ```
 
-# TODO
- gem化
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/multi_config. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
